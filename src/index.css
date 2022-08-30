@@ -2,20 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 ::-webkit-scrollbar {
-    width: 6px;
+  @apply w-2;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(240, 240, 240);
-    border-radius: 4px;
+  @apply bg-gray-200 dark:bg-bunker-800/75 rounded-lg;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(225, 225, 225);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(200, 200, 200);
+  @apply bg-gray-400 dark:bg-bunker-700 rounded-lg cursor-pointer;
 }
