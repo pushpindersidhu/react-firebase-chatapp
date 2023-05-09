@@ -1,19 +1,22 @@
 import React from "react";
 
 const Input = (props) => {
-	const { value, onChange, type, placeholder, className } = props;
-	return (
-		<input
-			className={
-				className ||
-				"py-3 px-6 w-full my-3 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 outline-none text-sm"
-			}
-			type={type}
-			placeholder={placeholder}
-			value={value}
-			onChange={onChange}
-		/>
-	);
+  const { value, onChange, type, placeholder, className, onKeyDown } = props;
+  return (
+    <input
+      value={value}
+      type={type}
+      onChange={onChange}
+      placeholder={placeholder}
+      onKeyDown={onKeyDown}
+      spellCheck="false"
+      autoComplete="off"
+      className={
+        className ||
+        "my-3 w-full rounded-lg bg-white py-3 px-6 text-sm text-gray-900 outline-none dark:bg-gray-800 dark:text-gray-100"
+      }
+    />
+  );
 };
 
 export default Input;

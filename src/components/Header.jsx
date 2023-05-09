@@ -1,20 +1,13 @@
 import React from "react";
-import {
-  FaSearch,
-  FaHashtag,
-  FaRegBell,
-  FaUserCircle,
-  FaMoon,
-  FaSun,
-} from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { HiAtSymbol } from "react-icons/hi";
 
-import useDarkMode from "../../hooks/useDarkMode";
+import useDarkMode from "../hooks/useDarkMode";
 
-import HeaderIcon from "./HeaderIcon";
+import HeaderIcon from "./common/HeaderIcon";
 
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 
 const Header = () => {
   const { user, signOutGuest } = useAuth();

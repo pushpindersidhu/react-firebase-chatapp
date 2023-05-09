@@ -1,25 +1,10 @@
 import React from "react";
-import {
-  BsPlus,
-  BsFillLightningFill,
-  BsGearFill,
-  BsSunFill,
-  BsMoonFill,
-  BsChatDotsFill,
-  BsChatLeftDotsFill,
-  BsCodeSlash,
-  BsMusicNote,
-} from "react-icons/bs";
-import { FaFire, FaReadme, FaReact } from "react-icons/fa";
+import { BsGearFill, BsChatDotsFill } from "react-icons/bs";
 import { GiReactor } from "react-icons/gi";
-import { AiFillRead } from "react-icons/ai";
-import { IoLogoGameControllerB } from "react-icons/io";
-import { MdMovie } from "react-icons/md";
 
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 
-import SideBarItem from "./SideBarItem";
-import Divider from "../common/Divider";
+import SideBarItem from "./common/SideBarItem";
 
 const SideBar = () => {
   const { user } = useAuth();

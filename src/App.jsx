@@ -6,8 +6,6 @@ import { auth, db } from "./firebase";
 
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
-import ActivityBar from "./components/ActivityBar";
-import ChatMessages from "./components/Chat";
 import Guest from "./components/Guest";
 import Chat from "./components/Chat";
 
@@ -25,7 +23,6 @@ function App() {
             <div className="grow-1 h-full w-full">
               {user && <Chat user={user} auth={auth} db={db} />}
             </div>
-            {/*<ActivityBar />*/}
           </div>
         </div>
       </div>

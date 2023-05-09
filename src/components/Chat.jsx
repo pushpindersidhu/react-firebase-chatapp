@@ -11,8 +11,8 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { FaPaperPlane } from "react-icons/fa";
 import { BsEmojiHeartEyesFill } from "react-icons/bs";
 
-import Message from "./Message";
-import Input from "./Input";
+import Message from "./common/Message";
+import Input from "./common/Input";
 
 const messageConverter = {
   toFirestore(message) {
@@ -38,7 +38,7 @@ const messageConverter = {
 };
 
 const Chat = (props) => {
-  const { db, user, auth } = props;
+  const { db, user } = props;
   const chatRef = collection(db, "chat").withConverter(messageConverter);
   const chatQuery = query(chatRef, orderBy("createdAt"), limitToLast(50));
 
@@ -116,9 +116,13 @@ const Chat = (props) => {
         <Input
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          onSubmit={sendMessage}
-          className="w-full"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              sendMessage();
+            }
+          }}
           placeholder="Type a message..."
+          className="h-full w-full cursor-text bg-transparent px-4 text-sm font-normal text-bunker-800 placeholder-bunker-500 outline-none selection:bg-gray-300 dark:text-gray-100 dark:placeholder-gray-500 dark:selection:bg-bunker-700"
         />
         <div
           onClick={sendMessage}

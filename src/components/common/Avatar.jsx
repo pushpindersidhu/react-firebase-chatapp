@@ -3,36 +3,36 @@ import React from "react";
 import { getAvatarLink } from "../../utils/avatar";
 
 const Avatar = (props) => {
-	const { id, className, onClick } = props;
+  const { id, className, onClick } = props;
 
-	const [isLoaded, setIsLoaded] = React.useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
 
-	React.useEffect(() => {
-		setIsLoaded(false);
-	}, [id]);
+  React.useEffect(() => {
+    setIsLoaded(false);
+  }, [id]);
 
-	const loaded = () => {
-		setIsLoaded(true);
-	};
+  const loaded = () => {
+    setIsLoaded(true);
+  };
 
-	return (
-		<div
-			className={`relative rounded-full bg-gray-700 mx-3 select-none ${className} overflow-hidden`}
-			onClick={onClick}
-		>
-			{!isLoaded && (
-				<div
-					className={`absolute w-full h-full z-100 bg-gray-600 animate-pulse rounded-full`}
-				></div>
-			)}
-			<img
-				src={getAvatarLink(id)}
-				alt=""
-				onLoad={loaded}
-				className={`w-full h-full ${!isLoaded && "hidden"}`}
-			/>
-		</div>
-	);
+  return (
+    <div
+      className={`relative mx-3 select-none rounded-full bg-gray-300 dark:bg-gray-700 ${className} overflow-hidden`}
+      onClick={onClick}
+    >
+      {!isLoaded && (
+        <div
+          className={`z-100 absolute h-full w-full animate-pulse rounded-full bg-gray-300 dark:bg-gray-600`}
+        ></div>
+      )}
+      <img
+        src={getAvatarLink(id)}
+        alt=""
+        onLoad={loaded}
+        className={`h-full w-full ${!isLoaded && "hidden"}`}
+      />
+    </div>
+  );
 };
 
 export default Avatar;

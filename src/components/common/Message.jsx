@@ -1,11 +1,9 @@
 import React from "react";
 
 const Message = (props) => {
-  const { groupedMessages, user } = props;
-  const { uid } = user;
+  const { groupedMessages } = props;
   const {
     messages,
-    uid: msgUid,
     displayName: msgDisplayName,
     photoURL: msgPhotoURL,
   } = groupedMessages;
